@@ -81,4 +81,12 @@ class UserController extends Controller
     {
         //
     }
+
+    public function saludar() {
+        /*return view('users', [
+      'name' => 'Victor'
+  ]);*/
+
+        return view('users')->with('name', 'Elvis');
+    }
 }

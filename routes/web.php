@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('user/{id}', 'UserController@show');
+
+Route::get('/', 'UserController@saludar');
