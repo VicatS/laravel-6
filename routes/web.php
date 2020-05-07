@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/{name?}', function ($name = null) {
-   return 'Bienvenido:' .$name;
-});
+Route::get('user/{id}', 'UserController@show');
