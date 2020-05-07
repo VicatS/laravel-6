@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/{id}', 'UserController@show');
+Route::get('user/{name}', 'UserController@show');
 
-Route::get('/', 'UserController@saludar');
+/*Route::get('/', function () {
+    $user = New App\User();
+    $user->id = 2;
+    $user->name = 'Isabel';
+    $user->email = 'isabel@gmail.com';
+    $user->save();
+});*/
+
+

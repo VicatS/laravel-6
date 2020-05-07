@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -43,9 +44,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
-        return 'UserId ' . $id;
+        $user = DB::table('users')->where('name', $name)->first();
+
+//        dd($user);
+        return view('users', ['user' => $user]);
     }
 
     /**
