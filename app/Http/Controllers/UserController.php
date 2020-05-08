@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,10 +47,10 @@ class UserController extends Controller
      */
     public function show($name)
     {
-        $user = DB::table('users')->where('name', $name)->first();
+//        $user = DB::table('users')->where('name', $name)->first();
 
 //        dd($user);
-        return view('users', ['user' => $user]);
+        return view('users', ['user' => User::where('name', $name)->firstOrFail()]);
     }
 
     /**
